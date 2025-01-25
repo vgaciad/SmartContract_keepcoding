@@ -4,7 +4,7 @@ pragma solidity ^0.8.26;
 contract ClimateCoin {
     // Variables
     string constant public name = "ClimateCoin";
-    string constant public symbol = "CC";
+    string constant public symbol = "CCC";
     uint8 constant public decimals = 0;     // Sin decimales, para que sea intercambiable por los créditos de carbono
    // uint256 constant public totalSupply = 10e5; // Emitimos 1 millón de ClimateCoin
     uint256  public totalSupply = 0; // Para poder emitir nuevos ClimateCoin
