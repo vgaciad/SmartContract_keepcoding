@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "cont",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ClimateCoin_ERC20.sol": "Contracto"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ClimateCoin_ERC20.sol": {
+			"keccak256": "0x93bda41463d336d7957edfc02da5ea530ad3549eff6f981082212003eaf8ebf1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://091def593f48bef502b04faa22920274d9a0ea01cbab1c79b3ac9a1cd37ef95c",
+				"dweb:/ipfs/QmVyjMbz1o28SjAJwvusaAAyYbQXDFrUwRNAJYiZMsRCVA"
+			]
+		}
+	},
+	"version": 1
+}
