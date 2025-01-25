@@ -144,6 +144,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "decimals",
 				"outputs": [
@@ -290,11 +303,11 @@
 	},
 	"sources": {
 		"contracts/ClimateCoin_ERC20.sol": {
-			"keccak256": "0x7e52076b2829cec90c02223a5c098cb981cbf8068a0f0013422dfab3bd3ad47c",
+			"keccak256": "0x085e109f4a382096d8a2b5928b79ad27381935db6f8d6ad0e0cc03c8a37acbba",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d9e732d8c05459544de4570768f348407d278206f5edc1d37ba9b8fac6bf883a",
-				"dweb:/ipfs/QmbjFEYYhRLCETUP2igfiQCpmdVRCPJG8wqDCBZiNBUqQG"
+				"bzz-raw://dd081b0d43853ba3d1f04c8e2ba09d4f0d5f3e257a6def0f925d6636d94ebadf",
+				"dweb:/ipfs/Qmee5KTMz6sjjq65D5A529msMmvyG51ucRUtmAS5cjxp9K"
 			]
 		}
 	},

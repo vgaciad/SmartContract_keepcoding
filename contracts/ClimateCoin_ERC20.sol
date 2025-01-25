@@ -26,6 +26,7 @@ contract ClimateCoin {
 
     // Funciones
 
+    // Emision de tokens
     function mint (uint amount) public {
 
         if (msg.sender != tokenCreator){
@@ -33,8 +34,16 @@ contract ClimateCoin {
         }
 
         balanceOf[msg.sender] += amount;
+        totalSupply +=amount;
             
         emit Transfer(address(0), msg.sender, amount);
+    }
+
+    // Quema de tokens
+    function burn (uint amount) public  {
+        balanceOf [msg.sender] -=amount;
+        totalSupply -= amount;
+        emit Transfer (msg.sender, address(0), amount);
     }
 
     function _transfer (address _from, address _to, uint256 _value) private {
