@@ -14,3 +14,14 @@ Minteo de 1 NFT con 1256 créditos de Cárbono del proyecto "Un Arbol una vida"
 https://amoy.polygonscan.com/tx/0xacf760f7df783a3ff11ac413da9cdbccf88256577c0280b8ebd7d9ffcbf98564
 
 El minteo se realiza correctamente y lo podemos visualizar sobre nuestra wallet (05_NFT_CreditosClimateCoin_minteados)
+
+03 Intercambio por ClimateCoin
+Debido a la falta de tiempo, no he podido implemntar la función que controle de manera automática el intercambio de Créditos de Cárbono y Climate Coin. Por lo que, los próximos sería la implementación de una función que controlora esta lógica. No obstanta, si que se puede comprobar de manera manual como se puede realizar el intercambio entre climate Coin y créditos de Cárbono entre 2 wallets que se muestran a continuación.
+
+Paso 1 
+wallet 1 -> 0x16F08E8c7c77449297b1f769c39e3C82487f9D98 (Dirección original de climate coin)
+Wallet 2 -> 0xD0e5155d2598835014f084F8A4D4cc6f90375243 ( tiene NFT con 1256 creditos de carbono)
+
+Paso 2
+wallet 2 envia NFt a wallet 1 con 1256 créditos de Cárbono
+wallet 1 envia 1256 Climate Coins a wallet 2
