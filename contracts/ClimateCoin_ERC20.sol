@@ -5,12 +5,14 @@ contract ClimateCoin {
     // Variables
     string constant public name = "ClimateCoin";
     string constant public symbol = "CC";
-    uint8 constant public decimals = 2;
-    uint256 constant public totalSupply = 10e2;
+    uint8 constant public decimals = 0;     // Sin decimales, para que sea intercambiable por los créditos de carbono
+   // uint256 constant public totalSupply = 10e5; // Emitimos 1 millón de ClimateCoin
+    uint256  public totalSupply = 0; // Para poder emitir nuevos ClimateCoin
     mapping(address => uint256) public balanceOf;
     mapping (address=> mapping (address => uint256)) public allowance;
-
-    // Eventos
+    address immutable private tokenCreator;
+    
+    //Eventos
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
@@ -18,11 +20,23 @@ contract ClimateCoin {
     error OverFunds(uint256 available, uint256 requested);
     
     // Constructor
-    constructor(){
-        balanceOf[msg.sender] = totalSupply;
+    constructor() {
+        tokenCreator = msg.sender;
     }
 
     // Funciones
+
+    function mint (uint amount) public {
+
+        if (msg.sender != tokenCreator){
+            revert("No eres el creador");
+        }
+
+        balanceOf[msg.sender] += amount;
+            
+        emit Transfer(address(0), msg.sender, amount);
+    }
+
     function _transfer (address _from, address _to, uint256 _value) private {
         if (balanceOf[_from]<_value){
             revert OverFunds(balanceOf[msg.sender],_value);
