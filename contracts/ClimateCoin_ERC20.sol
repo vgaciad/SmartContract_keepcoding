@@ -1,6 +1,55 @@
 //SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.26;
 
-contract Contracto {
-    uint256 public cont;
-}
+contract ClimateCoin {
+    // Variables
+    string constant public name = "ClimateCoin";
+    string constant public symbol = "CC";
+    uint8 constant public decimals = 2;
+    uint256 constant public totalSupply = 10e2;
+    mapping(address => uint256) public balanceOf;
+    mapping (address=> mapping (address => uint256)) public allowance;
+
+    // Eventos
+    event Transfer(address indexed _from, address indexed _to, uint256 _value);
+    event Approval(address indexed _owner, address indexed _spender, uint256 _value);
+
+    // Error
+    error OverFunds(uint256 available, uint256 requested);
+    
+    // Constructor
+    constructor(){
+        balanceOf[msg.sender] = totalSupply;
+    }
+
+    // Funciones
+    function _transfer (address _from, address _to, uint256 _value) private {
+        if (balanceOf[_from]<_value){
+            revert OverFunds(balanceOf[msg.sender],_value);
+        }
+        balanceOf [_from] -= _value;
+        balanceOf [_to] += _value;
+
+        emit Transfer(_from, _to, _value);    
+    }
+
+    function transfer (address _to, uint256 _value) public returns(bool){
+      _transfer(msg.sender,_to,_value);
+      return true;
+    }    
+
+    function approve(address _spender, uint256 _value) public returns (bool success){
+        allowance[msg.sender][_spender] = _value;
+
+        emit Approval(msg.sender, _spender, _value);
+        return true;
+    }
+
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool){
+        allowance[_from][msg.sender] -= _value;
+        _transfer (_from,_to,_value);
+
+        return true;
+    }
+
+} 
